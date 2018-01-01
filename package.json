@@ -1,0 +1,14 @@
+{
+  "name": "bowlingforcucumbers",
+  "version": "1.0.0",
+  "description": "Bowling scoring using the Cucumber BDD method",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "Blake Ramsdell",
+  "license": "ISC",
+  "dependencies": {
+    "cucumber": "^3.2.0"
+  }
+}
