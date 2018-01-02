@@ -28,14 +28,19 @@ function get_scorecard() {
     frame_done = false
 
     if (frame_score == 10) {
-      return_string += "X - "
+      if (frame_throws == 1) {
+        return_string += "X - "
+
+        if ((counter + 2) <= (number_throws - 1)) {
+          frame_score += game.throws[counter + 2]
+        }
+      }
+      else {
+        return_string += "/ "
+      }
 
       if ((counter + 1) <= (number_throws - 1)) {
         frame_score += game.throws[counter + 1]
-      }
-
-      if ((counter + 2) <= (number_throws - 1)) {
-        frame_score += game.throws[counter + 2]
       }
 
       frame_done = true
