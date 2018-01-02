@@ -36,3 +36,17 @@ Scenario: bowling a spare followed by an open frame
   And I throw a 6
   Then the scorecard should look like "8 / 13 3 6 22"
 
+Scenario: bowling a perfect game
+  Given I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  And I throw a 10
+  Then the scorecard should look like "X - 30 X - 60 X - 90 X - 120 X - 150 X - 180 X - 210 X - 240 X - 270 X - 300"

@@ -21,8 +21,13 @@ function get_scorecard() {
   total_score = 0
   frame_score = 0
   frame_throws = 0
+  frame_number = 1
 
   for (var counter = 0;counter < number_throws;++counter) {
+    if (frame_number > 10) {
+      break
+    }
+
     frame_score += game.throws[counter]
     frame_throws += 1
     frame_done = false
@@ -52,6 +57,7 @@ function get_scorecard() {
 
     if (frame_done) {
       total_score += frame_score
+      frame_number += 1
 
       return_string += total_score + " "
 
