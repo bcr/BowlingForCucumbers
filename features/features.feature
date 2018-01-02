@@ -29,3 +29,10 @@ Scenario: bowling a spare followed by a non-spare
   And I throw a 3
   Then the scorecard should look like "8 / 13 3"
 
+Scenario: bowling a spare followed by an open frame
+  Given I throw a 8
+  And I throw a 2
+  And I throw a 3
+  And I throw a 6
+  Then the scorecard should look like "8 / 13 3 6 22"
+
