@@ -31,14 +31,12 @@ function get_scorecard() {
     frame_score += game.throws[counter]
     frame_throws += 1
     frame_done = false
+    is_strike = false
 
     if (frame_score == 10) {
       if (frame_throws == 1) {
-        return_string += "X - "
-
-        if ((counter + 2) <= (number_throws - 1)) {
-          frame_score += game.throws[counter + 2]
-        }
+        return_string += "X "
+        is_strike = true
       }
       else {
         return_string += "/ "
@@ -46,8 +44,26 @@ function get_scorecard() {
 
       if ((counter + 1) <= (number_throws - 1)) {
         frame_score += game.throws[counter + 1]
+        if (frame_number == 10) {
+          this_throw = game.throws[counter + 1]
+          this_throw = (this_throw == 10) ? "X" : this_throw
+          return_string += this_throw + " "
+        }
+        else if (is_strike) {
+          return_string += "- "
+        }
       }
 
+      if (is_strike) {
+        if ((counter + 2) <= (number_throws - 1)) {
+          this_throw = game.throws[counter + 2]
+          frame_score += this_throw
+          this_throw = (this_throw == 10) ? "X" : this_throw
+          if (frame_number == 10) {
+            return_string += this_throw + " "
+          }
+        }
+      }
       frame_done = true
     }
     else {
