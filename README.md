@@ -1,4 +1,4 @@
-# Bowling for Cucumbers
+# Bowling for Cucumbers [![Build Status](https://travis-ci.org/bcr/BowlingForCucumbers.svg?branch=master)](https://travis-ci.org/bcr/BowlingForCucumbers)
 
 This was an example I did at one point to try out the [cucumber](https://docs.cucumber.io/installation/javascript/) framework for [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development). Score a ten-pin bowling game based on a series of throws.
 
