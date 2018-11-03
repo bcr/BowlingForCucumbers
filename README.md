@@ -21,3 +21,18 @@ Given('I throw a {int}', function (int, callback) {
 
 Then('the scorecard should look like {string}', function (string, callback) {
 ```
+
+As simple as this is, it defines my current set of behaviors. For instance:
+
+```cucumber
+Scenario: bowling a spare followed by an open frame
+  Given I throw a 8
+  And I throw a 2
+  And I throw a 3
+  And I throw a 6
+  Then the scorecard should look like "8 / 13 3 6 22"
+```
+
+## Scorecard Format
+
+The output is basically a space-separated sequence of all of the boxes on a normal bowling scoresheet. So `8 / 13 3` is an 8 on the first ball, a spare on the second ball, and 13 as the running score for the game, and 3 is the first ball on the next frame. `8 1 9` is an 8 on the first ball, a 1 on the second ball, and a 9 as the running score for the game.
